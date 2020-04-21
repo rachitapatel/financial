@@ -1,0 +1,49 @@
+Research question
+Analysing the relationship between Tether and Bitcoin: Does Tether impact Bitcoin?
+
+Following the Tether issuances (or grants), predictive models like linear regression and support vector machines were used to derive and predict the trading activity of Bitcoin and Tether using ’R platform’. To analyse and verify their trading patterns, more than one regression model is used and they show almost similar prediction. 
+
+Various observations were made for the following: 
+(a) Is there any impact of Tether grants on its market capitalization?
+(b) Does trading volume of Tether get affected by these grants?
+(c) Will Tether trading volume or Tether market capitalisation affect Bitcoin price or Bitcoin market?
+
+
+Data used
+The Bitcoin and Tether data from 01st March 2017 to 31st March 2018 is used because that is when Tether experienced an increase in its issuances. Initially, the daily open-close and high-low price, volume, and market capitalization of Bitcoin and Tether were collected. All these prices are in USD. As Tether price is pegged at one USD so it is ignored. The data on Tether issuances are extracted from the Omni Explorer because all the Tether issuing addresses and grants were listed there.
+
+
+Methods
+The modeling techniques used for the implementation were support vector machines and linear regression. These methods were selected because their respective advantages. SVM uses kernel for its processing, avoids over-fitting with the adoption of regularisation parameter. Linear regression being a simple method helps in determining the nature of relationship between two or more variables. Also, no assumptions specific to the data are made here. Apart from these, other techniques like various types of decision trees and k-nearest neighbor were also used for testing but they had drawbacks so they were discarded. Decision trees like classification and regression trees (CART) with rpart, conditional inference trees (CIT), conditional inference forests (CIF), and C50 consumed greater amount of time, did not process all the values which lead to missing values in the prediction. 
+
+Also, ‘R platform’ does not enable proper implementation of neural network limiting its usage. So, the abovementioned models have been used for deriving the predictive patterns and they are tested with the MAPE (mean absolute percentage error). It determines the prediction accuracy for forecasting.
+
+
+Conclusion
+Since the latter half of 2017, the increase in printing of Tether and the growth in Bitcoin identify a notable distrust in the cryptocurrency market. Thereby, leading to the controversy that Tether grants has an impact on Bitcoin returns. A contribution is made by this research to address the controversy surrounding the Bitcoin and Tether. 
+
+With the help of linear regression model and support vector machines, predictive models are designed to predict and derive the trading activity (of Bitcoin and Tether) following the Tether issuances. These models are tested for its prediction with the mean absolute percentage error and primarily the patterns derived from them are analysed. More than one model is used here to verify the patterns derived are accurate or not. Both of these models provide almost similar prediction.
+
+On analysing the predicted pattern after Tether issuances with the original trading pattern of Bitcoin and Tether, few conclusions were made. The first observation was that Tether grants do led to the increase of its market capitalisation but its trading volume is not affected significantly, which conveys that the issued Tethers are not traded majorly. On the other hand, a non-linear relationship was found between Bitcoin market capitalisation and Tether grants. But, the trading volume of Bitcoin as well as Tether, both of them reveals same level of trading pattern. This does not mean that one has an impact on the other; instead it indicates that both of them are traded regularly. Although, the Bitcoin trading volume and Tether trading volume depicted similar pattern but the Bitcoin price or its market capitalisation is purely dependent on its previous day’s trading activities (like trading volumes, its opening-closing value, high’s and low’s).
+
+All these observations prove that the Tether trading activity does not have any impact on the Bitcoin returns or Bitcoin market. But with the increase of Tether grants, even though they are not traded majorly there is some improvement in its trading volume. Since, both of them depict similar trading volume patterns which can be true for other crypto-currencies as well and not just Bitcoin. And considering the fact that the latter half of 2017 marked an evolving nature of the cryptocurrency market; it is noted that there is no effect of the increasing Tether grants on Bitcoin returns.
+
+
+Future Work
+Due to cryptocurrency market awareness and increased number of initial coin offerings (ICO’s), there has been significant growth of the cryptocurrency market. The ICO has played a major role in producing interest of the world in cryptocurrency. ICO is mainly used in the domain of crowdfunding which uses cryptocurrencies as source of capital for startup ventures. Cryptocurrency has become hugely popular that every organization is trying to adapt this new technology.
+
+As this research is just limited to addressing the impact of Tether on Bitcoin, but in future other factors can also be considered to determine or predict the volatility of the Bitcoin trading.
+
+
+References
+[1]	Cuthbertson, ”What is tether? Controversial cryptocurrency causes chaos for bitcoin price”, The Independent, 2018. [Online]. Available: https://www.independent.co.uk/life-style/gadgets-and tech/news/tethercryptocurrency-explainer-what-bitcoin-price-bitfinex-ethereum-ripplestablecoin- a8585026.html [Accessed: 10- Feb- 2019].
+
+[2]	”Cryptocurrency Market Capitalizations — CoinMarketCap”, CoinMarketCap, 2019. [Online]. Available: https://coinmarketcap.com/. [Accessed: 14-Apr- 2019].
+
+[3]	”omniexplorer.info - OmniExplorer.info”, Minify.mobi, 2019. [Online]. Available: https://minify.mobi/results/omniexplorer.info. [Accessed: 18- Apr-2019].
+
+[4]	R. Mittal, S. Arora, and M.P.S Bhatia, “Automated Cryptocurrencies Prices Prediction using Machine Learning,” ICTACT Journal on Soft Computing, vol. 8, no. 4, pp. 1758-1761, July. 2018.
+
+[5]	L. Alessandretti, A. ElBahrawy, L. Aiello, and A. Baronchelli, “Anticipating Cryptocurrency Prices Using Machine Learning,” Complexity, vol. 2018, pp. 1-16, November. 2018.
+
+[6]	D. Stosic, D. Stosic, T. Ludermir, and T. Stosic, ”Collective behavior of cryptocurrency price changes”, Physica A: Statistical Mechanics and its Applications, vol. 507, pp. 499-509, 2018.
