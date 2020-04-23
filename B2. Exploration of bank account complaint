@@ -1,0 +1,59 @@
+Dataset
+
+Complaint data from the Consumer Financial Protection Bureau (CFPB) for the year 2012 to 2017 are used here. It comprises of two datasets which are credit card related complaints, and bank account or service related complaints. CFPB is a 21st century USA established agency, which helps consumer finance markets by writing rules to remove any unfair acts and enforces the law, takes consumer complaints, enhances financial education, researches on consumer experience of using financial products, and monitors financial markets for new risks to consumers. The current implementation of CFPB related to complaint data is well explained by Fonseka et al. [1].
+
+
+Exploration
+
+Step 1: Verifying whether metadata reported by the website is correct or not. Metadata comprises of no. of attributes and its types. 
+a. Instances and Attributes: According to the metadata reported, we should have 18 columns and 84811 rows and that’s true in our case too. 
+b. Attribute Types: The metadata provided is verified with above attributes (like in credit card dataset). Only difference here is, the Product field has many bank account and service related products and there are various sub products related to this product in the Sub Product field. 
+
+
+Step 2: Check for missing values in dataset
+According to the metadata, amount of missing values are as follows: 
+Attribute Missing Values
+Date Received - None
+Product - None
+Sub Product - None
+Issue - None
+Sub Issue - 84811
+Consumer Complaint Narrative - 70951 
+Company Public Response - 61820
+Company - None
+State - 1549
+Zip Code - 1550 
+Tags - 73179
+Consumer Consent Provided - 62439 
+Submitted via - None
+Data sent to Company - None 
+Company Response to Consumer - None
+Timely Response - None
+Consumer Disputed - 4031
+Complaint ID - None
+
+Step 3: Check for any other issues which are as follows- 
+a. Dirty Data- not present in this case 
+b. Duplicate Records- The product field has same value for all rows. Whereas the sub product and sub issue fields have all empty rows. Complaint ID field has all unique values. 
+c. Outliers in data- In categorical variables there are no outliers. Also, in date received and date sent to company, outliers are not found. 
+d. Superfluous fields- 
+There are few superfluous fields (8 columns) which are not required and can be removed. It has been observed that Sub Issue attribute has all missing instances so that can be removed. As majority of the fields of Tags, Consumer Complaint Narrative, and Company Public Response are empty so they are discarded. Also, Product can be neglected because its value is same for all. Complaint ID is not required as that will not help with any analysis because it has all unique values so, removing that too. Also, there is no need for Consumer Consent Provided attribute because the N/A value when calculated in missing fields can lead to majority of missing data. Since, date is divided into parts so Date received and Date sent to company columns is removed too. Here, the Sub Product field is considered unlike credit card dataset.
+
+Transformation
+
+Step 1: Finding missing values after data exploration stage
+There are missing values in our categorical data. To overcome these missing values proper technique is needed. Same like first dataset, one objection here would be how ZIP code can be a categorical variable. Well, this cannot be converted into numeric or integer as that leads to NA coercion; so, let’s consider it into categorical and see what result it yields.
+
+Step 2: Select proper imputation technique. For categorical data, it would be either using mode imputation or, delete rows with missing values, or using Machine Learning (ML) approach. ML approach on this big dataset is very time consuming, also, we cannot delete missing rows as they are needed for analysis. Already, attributes with maximum missing rows are deleted. Thus, we end up with mode imputation technique for handling missing values.
+
+Step 3: For using mode imputation technique, find out mode of categorical data.
+
+Step 4: Implementing missing value transformation by filling those rows with the value which have been repeated maximum number of times, i.e., ‘First Mode’ and checking results after implementation of imputation. So, the results obtained after mode imputation is as follows: all the missing data are well addressed.
+
+
+References
+
+[1]	W. Fonseka, D. Nadeesha, P. Thakshila, N. Jeewandara, D. Wijesinghe, R. Sahabandu and P. Asanka, "Use of data warehousing to analyze customer complaint data of Consumer Financial Protection Bureau of United States of America", 2016 IEEE International Conference on Information and Automation for Sustainability (ICIAfS), 2016.
+[2]	S. Tjandra, A. Warsito and J. Sugiono, "Determining citizen complaints to the appropriate government departments using KNN algorithm", 2015 13th International Conference on ICT and Knowledge Engineering (ICT & Knowledge Engineering 2015), 2015.
+[3]	Mongay, "Perceptions of consumers in the financial industry under a qualitative data analysis methodology", International Journal of Trade and Global Markets, vol. 9, no. 1, p. 33, 2016.
+
