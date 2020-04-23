@@ -1,0 +1,58 @@
+Dataset
+
+Complaint data from the Consumer Financial Protection Bureau (CFPB) for the year 2012 to 2017 are used here. It comprises of two datasets which are credit card related complaints, and bank account or service related complaints. CFPB is a 21st century USA established agency, which helps consumer finance markets by writing rules to remove any unfair acts and enforces the law, takes consumer complaints, enhances financial education, researches on consumer experience of using financial products, and monitors financial markets for new risks to consumers. The current implementation of CFPB related to complaint data is well explained by Fonseka et al. [1].
+
+
+Exploration
+
+Step 1: Verifying whether metadata reported by the website is correct or not. Metadata comprises of no. of attributes and its types. 
+a. Instances and Attributes: According to the metadata reported, there are 18 columns and 87718 rows and that’s true in our case too. 
+b. Attribute Types: The metadata provided is verified with the provided attributes. 
+
+Step 2: Check for missing values in dataset
+According to the metadata, amount of missing values are as follows: 
+Attribute Missing Values
+Date Received - None
+Product - None
+Sub Product - 87718
+Issue - None
+Sub Issue - 87718
+Consumer Complaint Narrative - 70285 
+Company Public Response - 67762
+Company - None
+State - 738
+Zip Code - 738 
+Tags - 74460
+Consumer Consent Provided - 58155 
+Submitted via - 1 
+Data sent to Company - None 
+Company Response to Consumer - None
+Timely Response - None
+Consumer Disputed - 3810
+Complaint ID - None
+
+Step 3: Check for any other issues which are as follows- 
+a. Dirty Data- not present in this case 
+b. Duplicate Records- The product field has same value for all rows. Whereas the sub product and sub issue fields have all empty rows. Complaint ID field has all unique values. 
+c. Outliers in data- In categorical variables there are no outliers. Also, in date received and date sent to company, outliers are not found. 
+d. Superfluous fields- 
+There are few superfluous fields (9 columns) which are not required and can be removed. It was observed that Sub Product and Sub Issue attribute has all missing instances so they were removed. As majority of the fields of Tags, Consumer Complaint Narrative, and Company Public Response are empty so they were discarded. Also, Product column can be neglected because its value is same for all. There is no need for Complaint ID, it will not help with any analysis as it has all unique values so that can be removed too. Also, there is no need for Consumer Consent Provided attribute because it was observed that how N/A’s can lead to majority of missing data. Since, date is divided into parts, so, Date received and Date sent to company columns can be discarded too.
+
+
+Transformation
+
+Step 1: Finding missing values after data exploration stage
+Initially, missing value was calculated. To overcome these missing values proper technique is needed. Also, one objection here would be how ZIP code can be converted into categorical. Well, we cannot convert this into numeric or integer as that leads to NA coercion; so, let’s consider it into categorical and see what result it yields. 
+
+Step 2: Then, select proper imputation technique. For categorical data, it would be either using mode imputation, delete rows with missing values or using Machine Learning (ML) approach. ML approach on this big dataset is very time consuming, also, missing rows cannot be deleted as they are needed for analysis. Already, attributes with maximum missing rows are deleted. Thus, mode imputation technique for handling missing values is selected. 
+
+Step 3: For using mode imputation technique, find out mode of categorical data.
+
+Step 4: Implementing missing value transformation by filling missing rows with the value which has repeated maximum number of times, i.e., ‘First Mode’ and checking results after implementation of imputation.
+
+
+References
+
+[1]	W. Fonseka, D. Nadeesha, P. Thakshila, N. Jeewandara, D. Wijesinghe, R. Sahabandu and P. Asanka, "Use of data warehousing to analyze customer complaint data of Consumer Financial Protection Bureau of United States of America", 2016 IEEE International Conference on Information and Automation for Sustainability (ICIAfS), 2016.
+[2]	S. Tjandra, A. Warsito and J. Sugiono, "Determining citizen complaints to the appropriate government departments using KNN algorithm", 2015 13th International Conference on ICT and Knowledge Engineering (ICT & Knowledge Engineering 2015), 2015.
+[3]	Mongay, "Perceptions of consumers in the financial industry under a qualitative data analysis methodology", International Journal of Trade and Global Markets, vol. 9, no. 1, p. 33, 2016.
