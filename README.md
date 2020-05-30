@@ -1,6 +1,6 @@
 # financial
 
-This repository contains summary files for the following financial projects. These projects have been done using R.
+This repository contains summary files for some of the following financial projects. These projects have been done using R.
 
 A. Understanding saving behaviour of individuals' for the varied financial measurement categories using cluster analysis.
 
