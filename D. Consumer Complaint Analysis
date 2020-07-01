@@ -1,0 +1,88 @@
+Abstract:
+Consumer complaints in various financial sectors like credit card, bank service, debt collection, loan, and mortgage are analyzed in this paper. 
+Consumer dissatisfaction is a common issue and occurs in every organization of any given field. Since, finance sector is most vulnerable and churning amongst their users can impact company’s reputation.  
+So, this research aims to understand consumers’ behavior in the abovementioned five financial domains.
+The initial objective of this research was to understand which sectors or fields are more vulnerable to consumer complaints. 
+This analysis demonstrates various American financial institutions, American states, and ‘Mortgage’ sector were worst affected by consumer disputes. 
+Thus, data mining techniques like various decision trees, Naïve Bayes and logistic regression were applied on five datasets to predict consumer dispute nature. 
+The second objective of this research is attained by analyzing five financial sectors, and the results show that decision trees are better in predicting followed by Logistic Regression and lastly Naïve Bayes. 
+The research shows that most of the consumers despite of getting timely response along with proper explanation over their complaints still dispute.
+
+
+Data Mining Methodology:
+This research follows CRISP-DM reference model. 
+Thus, initially we will understand about datasets then proceed towards preparing data for modeling. 
+Here, various data mining techniques were selected and applied depending on the form of data. 
+Lastly, the results were evaluated with respect to the research objective.
+The objective of this research is to analyze consumer complaints, so that organizations will understand how good their product or service is; which might either improve the vulnerabilities associated with that service or provide further enhancement to that service. 
+Later, implement data mining techniques to predict cases when the consumer disputed.
+‘R platform’ has been used for this research analysis. 
+
+Since, datasets used here are categorical, evaluation methods selected are: 
+(i) Three types of Decision Trees- Classification and regression trees (CART) with rpart, 
+Random Forest (RF), Conditional Inference Trees (CIT) and C50; 
+(ii) Naïve Bayes (NB); and 
+(iii) Logistic Regression (LR). 
+The reason for selecting these methods were: 
+(a) they all can handle categorical data and 
+(b) they work well with high cardinality attributes. 
+
+Initially many of these methods had issue with size of dataset. 
+When whole dataset was given for processing after attribute selection, the size appeared to be greater than 1.8 gigabytes. 
+So, going back to DQR was important, to understand cardinality as well as mode frequency of the attributes. 
+Accordingly, attributes were chosen for respective methods very smartly. 
+
+Apart from these, other methods were also used for testing like 
+Rotation Forest, 
+Support Vector Machine (SVM) Regression, 
+Local Regression, 
+Spline Regression, 
+Generalized Additive Models (GAM), 
+Neural Network (NN), 
+Principal Component Analysis (PCA) regression, 
+Linear Discriminant Analysis (LDA), and 
+k-nearest neighbors (KNN). 
+All of these methods had some or the other drawback like: 
+(i) size issue (cannot compute large dataset); 
+(ii) for SVM regression- it took too long for execution, maybe hours; 
+(iii) for local regression, spline regression, GAM, PCA regression, and KNN – all of them cannot work with non-numeric data; 
+(iv) LDA cannot handle long texts properly; 
+(v) ‘R’ platform does not allow proper implementation of NN. 
+The performance and application limitations of these methods restrict their use.   
+
+
+Evaluation:
+The first research objective i.e., which sector is most vulnerable to complaints or which are the weak financial sectors is being analyzed here. 
+1. There were highest numbers of consumer complaint in ‘Mortgage’ sector followed by ‘Debt Collection’ for the year 2013 to 2017. But consumers from ‘Mortgage sector’ disputed the most whereas those from ‘Debt Collection’ section had least consumer dispute ratio. So, ‘Mortgage sector’ is vulnerable to consumer complaints.
+2. The results show that most of the consumers, who received timely response, did not dispute. But few of them, despite of getting timely response, disputed regarding the services they received. ‘Mortgage’ and ‘Credit Card’ sector were amongst the few sectors that faced such tragedy. So, these sectors can be claimed as weak sectors for providing financial services.
+3. The analysis shows that American financial institutes like ‘Amex’, ‘Bank of America’, ‘Capital One’, ‘Citibank’, ‘JP Morgan Chase & Co.’, ‘Synovus Bank’ were amongst many institutions who faced consumer dispute as well as churning in all five financial sectors. So, these companies had weak client services.
+4. The American states that are vulnerable to consumer disputes and which faced highest number of disputes for all five financial sectors are California, Florida, New York, and Texas (all these states are populated states of America). 
+5. Also, internet is the weakest platform for a company to respond to consumer complaints. Majority of consumers disputed over lodging their complaint on internet. Whereas those consumers who mailed their consents received proper feedback and did not dispute.
+6. Additionally, those consumers who received proper explanation for their complaints, where the ones to dispute. This is because the explanation was not convincing enough for the person. So, institutions need to take proper precautions for their customer services, 
+
+Now, we will discuss about second research objective i.e. consumer dispute nature.
+1. After evaluating results of decision trees, Naïve Bayes and logistic regression, few inferences can be drawn like: there is linear relationship between processing time and attribute cardinality which can help in determining which factors are to be considered for understanding consumer dispute scene. 
+
+
+Conclusion:
+Initially, analysis of consumer complaints in various financial sectors like credit card, bank service, debt collection, loan, and mortgage was conducted. 
+This research objective demonstrates which issue leads to consumer dispute, geographic area in America that accounts to highest amount of complaints, which American institutions receive larger complains, how internet vulnerability, and timely response has caused consumer to dispute. 
+The dataset used was from CFPB, which contains financial consumer complaint data of America. 
+
+The second research objective which was regarding determining consumer dispute nature has been achieved using various data mining algorithms. 
+After evaluating results of decision trees, Naïve Bayes and logistic regression, few inferences can be drawn like: there is linear relationship between processing time and attribute cardinality which can help in determining which factors are to be considered for understanding consumer dispute scene. 
+The methods used showed varying results which were dependent on time, size of dataset, cardinality of attributes, limitation and complexity of a model. 
+Thus, based on application and usage, a particular model can be selected.
+
+To achieve first analysis and derive a predictive model for second analysis, lots of decisions were made for various stages. 
+Like for preprocessing stage, how much data to consider. How to handle missing values present in some predictor as well as response variables. 
+Another decision was made regarding attributes, since the dataset was too large, so smart decisions has to be made for using particular attributes with respect to algorithm limitations and complexity. 
+Other decisions were: what ratio of data partition is to be considered and which performance metrics should be used for evaluating decisions.
+
+This is how on combining analysis and modeling, consumer nature can be understood which will help in providing efficient service. 
+In future, more work can be done into developing a model which has high speed and this will help in quick understanding of consumer complaints, thereby an efficient solution can be derived immediately without delay. 
+That will keep consumer engaged with the institution and thus problem will be resolved immediately, thereby decreasing consumer dissatisfaction and their churning. Also, analysis can be done. 
+Since, decision trees and logistic regression shows almost similar results, more study can be done into that. 
+If more time is given for in-depth understanding the factors responsible for consumer dispute, better would be the results.
+
+
